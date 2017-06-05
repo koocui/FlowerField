@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (currentVersion.compare(oldVersion as! String)) == .OrderedDescending{
             //保存当前版本
             NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: XCBundleShortVersionString)
-            return true
+            return false
         }
         return true
     }
