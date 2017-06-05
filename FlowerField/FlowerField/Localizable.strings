@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  FlowerField
+
+  Created by CJW on 17/6/5.
+  Copyright © 2017年 cjw. All rights reserved.
+*/
+"tab_theme" = "theme";
+"tab_malls" = "malls";
+"tab_profile" = "profile";
