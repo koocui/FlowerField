@@ -49,9 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (currentVersion.compare(oldVersion as! String)) == .OrderedDescending{
             //保存当前版本
             NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: XCBundleShortVersionString)
-            return false
+            return true
         }
-        return true
+        return false
     }
     // MARK: - 设置相关的APPKey
     private func setAppKey(){
