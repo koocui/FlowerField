@@ -58,12 +58,17 @@
 		7B048F0D1EE53495003C379E /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B048F0C1EE53495003C379E /* NewFeatureViewController.swift */; };
 		7B048F0F1EE5374C003C379E /* NewFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B048F0E1EE5374C003C379E /* NewFeatureCell.swift */; };
 		7B048F141EE54307003C379E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B048F131EE54307003C379E /* MainViewController.swift */; };
+		7B6613911EE932EE00C83CEC /* ToolBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6613901EE932EE00C83CEC /* ToolBottomView.swift */; };
 		7B6C07A11EE6488000F2FF05 /* NavgationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C07A01EE6488000F2FF05 /* NavgationViewController.swift */; };
 		7B6C07AA1EE697AB00F2FF05 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C07A91EE697AB00F2FF05 /* HomeTableViewController.swift */; };
 		7B6C07B41EE6983C00F2FF05 /* MallsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C07B31EE6983C00F2FF05 /* MallsTableViewController.swift */; };
 		7B6C07C11EE698FA00F2FF05 /* ColumnistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C07C01EE698FA00F2FF05 /* ColumnistViewController.swift */; };
 		7B6C07C31EE6991F00F2FF05 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C07C21EE6991F00F2FF05 /* ProfileViewController.swift */; };
 		7B6C07C51EE69D1200F2FF05 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C07C41EE69D1200F2FF05 /* Author.swift */; };
+		7B90581A1EE79CB800C48A1E /* TitleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9058191EE79CB800C48A1E /* TitleBtn.swift */; };
+		7B90581C1EE7AAAC00C48A1E /* HomeArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90581B1EE7AAAC00C48A1E /* HomeArticleCell.swift */; };
+		7B90581E1EE7CB0100C48A1E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90581D1EE7CB0100C48A1E /* Article.swift */; };
+		7BD4F8631EE8EDFB00276689 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4F8621EE8EDFB00276689 /* Category.swift */; };
 		7BDE7DE21EE6C9E400D377FB /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE7DE11EE6C9E400D377FB /* RefreshControl.swift */; };
 		7BDE7DE41EE6C9FB00D377FB /* RefreshTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE7DE31EE6C9FB00D377FB /* RefreshTipView.swift */; };
 		B961A300D908A1A5E7D626E7 /* Pods_FlowerField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC5490D3F0F90390F08BB6D /* Pods_FlowerField.framework */; };
@@ -172,12 +177,17 @@
 		7B048F0C1EE53495003C379E /* NewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = SOURCE_ROOT; };
 		7B048F0E1EE5374C003C379E /* NewFeatureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureCell.swift; sourceTree = SOURCE_ROOT; };
 		7B048F131EE54307003C379E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		7B6613901EE932EE00C83CEC /* ToolBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolBottomView.swift; sourceTree = "<group>"; };
 		7B6C07A01EE6488000F2FF05 /* NavgationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavgationViewController.swift; sourceTree = SOURCE_ROOT; };
 		7B6C07A91EE697AB00F2FF05 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		7B6C07B31EE6983C00F2FF05 /* MallsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		7B6C07C01EE698FA00F2FF05 /* ColumnistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnistViewController.swift; sourceTree = SOURCE_ROOT; };
 		7B6C07C21EE6991F00F2FF05 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = SOURCE_ROOT; };
 		7B6C07C41EE69D1200F2FF05 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		7B9058191EE79CB800C48A1E /* TitleBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBtn.swift; sourceTree = "<group>"; };
+		7B90581B1EE7AAAC00C48A1E /* HomeArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeArticleCell.swift; sourceTree = "<group>"; };
+		7B90581D1EE7CB0100C48A1E /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		7BD4F8621EE8EDFB00276689 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7BDE7DE11EE6C9E400D377FB /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		7BDE7DE31EE6C9FB00D377FB /* RefreshTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshTipView.swift; sourceTree = "<group>"; };
 		F875150D44872778BC1D7495 /* Pods-FlowerField.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerField.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowerField/Pods-FlowerField.release.xcconfig"; sourceTree = "<group>"; };
@@ -622,7 +632,9 @@
 		7B6C07A61EE6972000F2FF05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7B90581D1EE7CB0100C48A1E /* Article.swift */,
 				7B6C07C41EE69D1200F2FF05 /* Author.swift */,
+				7BD4F8621EE8EDFB00276689 /* Category.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -639,6 +651,9 @@
 			isa = PBXGroup;
 			children = (
 				7BDE7DE01EE6C9B300D377FB /* RefreshControll */,
+				7B9058191EE79CB800C48A1E /* TitleBtn.swift */,
+				7B90581B1EE7AAAC00C48A1E /* HomeArticleCell.swift */,
+				7B6613901EE932EE00C83CEC /* ToolBottomView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -864,6 +879,7 @@
 		7B048E451EE4EF27003C379E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XC;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = cjw;
@@ -1001,6 +1017,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B90581E1EE7CB0100C48A1E /* Article.swift in Sources */,
 				7B048EFD1EE5034F003C379E /* NSDate+Extension.swift in Sources */,
 				7B048F0F1EE5374C003C379E /* NewFeatureCell.swift in Sources */,
 				7B6C07C31EE6991F00F2FF05 /* ProfileViewController.swift in Sources */,
@@ -1016,12 +1033,16 @@
 				7B6C07C51EE69D1200F2FF05 /* Author.swift in Sources */,
 				7B048F091EE53036003C379E /* UILabel+Extension.swift in Sources */,
 				7B6C07AA1EE697AB00F2FF05 /* HomeTableViewController.swift in Sources */,
+				7B90581C1EE7AAAC00C48A1E /* HomeArticleCell.swift in Sources */,
+				7B90581A1EE79CB800C48A1E /* TitleBtn.swift in Sources */,
 				7B6C07C11EE698FA00F2FF05 /* ColumnistViewController.swift in Sources */,
 				7B6C07B41EE6983C00F2FF05 /* MallsTableViewController.swift in Sources */,
 				7B048F051EE52BBE003C379E /* UIImage+Extension.swift in Sources */,
 				7B048E511EE4EF28003C379E /* AppDelegate.swift in Sources */,
 				7B6C07A11EE6488000F2FF05 /* NavgationViewController.swift in Sources */,
+				7BD4F8631EE8EDFB00276689 /* Category.swift in Sources */,
 				7BDE7DE41EE6C9FB00D377FB /* RefreshTipView.swift in Sources */,
+				7B6613911EE932EE00C83CEC /* ToolBottomView.swift in Sources */,
 				7B048EF91EE4FDE8003C379E /* ShareTool.swift in Sources */,
 				7BDE7DE21EE6C9E400D377FB /* RefreshControl.swift in Sources */,
 			);
