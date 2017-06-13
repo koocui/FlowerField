@@ -104,9 +104,26 @@ class ToolBottomView: UIView {
         return btn
     }
     
-    
+//    if btn == seeBtn {
+//    delegate?.toolBottomView!(self, type: ToolBarBtnType.See.rawValue)
+//    }else if(btn == zanBtn){
+//    delegate?.toolBottomView!(self, type: ToolBarBtnType.Zan.rawValue)
+//    }else if(btn == commentBtn){
+//    delegate?.toolBottomView!(self, type: ToolBarBtnType.Comment.rawValue)
+//    }
     func click(btn:UIButton){
-        
+        if btn == seeBtn{
+            delegate?.toolBottomView!(self, type: ToolBarBtnType.See.rawValue)
+        }else if (btn == zanBtn){
+            delegate?.toolBottomView!(self, type: ToolBarBtnType.Zan.rawValue)
+        }else if (btn == commentBtn){
+            delegate?.toolBottomView!(self, type: ToolBarBtnType.Comment.rawValue)
+        }
     }
     
 }
+
+
+
+
+

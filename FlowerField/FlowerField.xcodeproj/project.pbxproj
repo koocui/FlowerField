@@ -68,6 +68,9 @@
 		7B90581A1EE79CB800C48A1E /* TitleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9058191EE79CB800C48A1E /* TitleBtn.swift */; };
 		7B90581C1EE7AAAC00C48A1E /* HomeArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90581B1EE7AAAC00C48A1E /* HomeArticleCell.swift */; };
 		7B90581E1EE7CB0100C48A1E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90581D1EE7CB0100C48A1E /* Article.swift */; };
+		7B9FE13A1EF00B9900C93251 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9FE1391EF00B9900C93251 /* BlurView.swift */; };
+		7B9FE13C1EF0113A00C93251 /* MallsCategoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9FE13B1EF0113A00C93251 /* MallsCategoryHeader.swift */; };
+		7B9FE13E1EF0168000C93251 /* MallsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9FE13D1EF0168000C93251 /* MallsCategory.swift */; };
 		7BD4F8631EE8EDFB00276689 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4F8621EE8EDFB00276689 /* Category.swift */; };
 		7BDE7DE21EE6C9E400D377FB /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE7DE11EE6C9E400D377FB /* RefreshControl.swift */; };
 		7BDE7DE41EE6C9FB00D377FB /* RefreshTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE7DE31EE6C9FB00D377FB /* RefreshTipView.swift */; };
@@ -187,6 +190,9 @@
 		7B9058191EE79CB800C48A1E /* TitleBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleBtn.swift; sourceTree = "<group>"; };
 		7B90581B1EE7AAAC00C48A1E /* HomeArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeArticleCell.swift; sourceTree = "<group>"; };
 		7B90581D1EE7CB0100C48A1E /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		7B9FE1391EF00B9900C93251 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		7B9FE13B1EF0113A00C93251 /* MallsCategoryHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallsCategoryHeader.swift; sourceTree = SOURCE_ROOT; };
+		7B9FE13D1EF0168000C93251 /* MallsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallsCategory.swift; sourceTree = SOURCE_ROOT; };
 		7BD4F8621EE8EDFB00276689 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7BDE7DE11EE6C9E400D377FB /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		7BDE7DE31EE6C9FB00D377FB /* RefreshTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshTipView.swift; sourceTree = "<group>"; };
@@ -654,6 +660,7 @@
 				7B9058191EE79CB800C48A1E /* TitleBtn.swift */,
 				7B90581B1EE7AAAC00C48A1E /* HomeArticleCell.swift */,
 				7B6613901EE932EE00C83CEC /* ToolBottomView.swift */,
+				7B9FE1391EF00B9900C93251 /* BlurView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -700,6 +707,7 @@
 		7B6C07B11EE697FD00F2FF05 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				7B9FE13B1EF0113A00C93251 /* MallsCategoryHeader.swift */,
 			);
 			name = VIew;
 			sourceTree = "<group>";
@@ -707,6 +715,7 @@
 		7B6C07B21EE6980000F2FF05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7B9FE13D1EF0168000C93251 /* MallsCategory.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1019,6 +1028,7 @@
 			files = (
 				7B90581E1EE7CB0100C48A1E /* Article.swift in Sources */,
 				7B048EFD1EE5034F003C379E /* NSDate+Extension.swift in Sources */,
+				7B9FE13E1EF0168000C93251 /* MallsCategory.swift in Sources */,
 				7B048F0F1EE5374C003C379E /* NewFeatureCell.swift in Sources */,
 				7B6C07C31EE6991F00F2FF05 /* ProfileViewController.swift in Sources */,
 				7B048EFB1EE50229003C379E /* NSString+Extension.swift in Sources */,
@@ -1029,12 +1039,14 @@
 				7B048F0D1EE53495003C379E /* NewFeatureViewController.swift in Sources */,
 				7B048F071EE52ECC003C379E /* UITextField+Extension.swift in Sources */,
 				7B048F0B1EE53071003C379E /* NSObject+Extension.swift in Sources */,
+				7B9FE13C1EF0113A00C93251 /* MallsCategoryHeader.swift in Sources */,
 				7B048F011EE52860003C379E /* UIButton+Extension.swift in Sources */,
 				7B6C07C51EE69D1200F2FF05 /* Author.swift in Sources */,
 				7B048F091EE53036003C379E /* UILabel+Extension.swift in Sources */,
 				7B6C07AA1EE697AB00F2FF05 /* HomeTableViewController.swift in Sources */,
 				7B90581C1EE7AAAC00C48A1E /* HomeArticleCell.swift in Sources */,
 				7B90581A1EE79CB800C48A1E /* TitleBtn.swift in Sources */,
+				7B9FE13A1EF00B9900C93251 /* BlurView.swift in Sources */,
 				7B6C07C11EE698FA00F2FF05 /* ColumnistViewController.swift in Sources */,
 				7B6C07B41EE6983C00F2FF05 /* MallsTableViewController.swift in Sources */,
 				7B048F051EE52BBE003C379E /* UIImage+Extension.swift in Sources */,
