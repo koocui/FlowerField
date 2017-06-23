@@ -23,9 +23,9 @@ class ToolBottomView: UIView {
 
     var article:Article?{
         didSet{
-            seeBtn.setTitle("\(article?.read)", forState: .Normal)
-            commentBtn.setTitle("\(article?.fnCommentNum)", forState: .Normal)
-            zanBtn.setTitle("\(article?.favo)", forState: .Normal)
+            seeBtn.setTitle("\(article!.read)", forState: .Normal)
+            commentBtn.setTitle("\(article!.fnCommentNum)", forState: .Normal)
+            zanBtn.setTitle("\(article!.favo)", forState: .Normal)
             
             if ((article?.isNotHomeList) != nil) {
                 if let time = article?.createDateDesc{

@@ -7,17 +7,26 @@
 //
 
 import UIKit
-
+import SnapKit
+import Kingfisher
 class HomeArticleCell: UITableViewCell {
 
     var article:Article?{
         didSet{
             if let art = article{
-                
+                //设置数据
+                smallIconView.kf_setImageWithURL(NSURL(string: art.smallIcon!)!, placeholderImage: UIImage(named: "placehodler"), optionsInfo: [], progressBlock: nil, completionHandler: nil)
+                headImgView.kf_setImageWithURL(NSURL(string: art.author!.headImg!)!, placeholderImage: UIImage(named: "pc_default_avatar"), optionsInfo: [], progressBlock: nil, completionHandler: nil)
+                identityLabel.text = art.author!.identity!
+                authorLabel.text = art.author!.userName ?? "佚名"
+                categoryLabel.text = "[" + (art.category!.name)! + "]"
+                titleLabel.text = art.title
+                descLabel.text = art.desc
+                bottomView.article = art
+                authView.image = art.author?.authImage
             }
         }
     }
-    
     
     var clickHeadImage:((article:Article?)->())?
     
@@ -31,7 +40,91 @@ class HomeArticleCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        setup()
     }
+    
+    
+    
+    private func setup(){
+        backgroundColor = UIColor(gray: 241)
+        contentView.backgroundColor = UIColor.whiteColor()
+        contentView.addSubview(smallIconView)
+        contentView.addSubview(authorLabel)
+        contentView.addSubview(identityLabel)
+        contentView.addSubview(headImgView)
+        contentView.addSubview(authView)
+        contentView.addSubview(categoryLabel)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(descLabel)
+        contentView.addSubview(underline)
+        contentView.addSubview(bottomView)
+        contentView.snp_makeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsetsMake(8, 8, 0, -8))
+        }
+        
+        smallIconView.snp_makeConstraints { (make) in
+            make.left.right.top.equalTo(contentView)
+            make.height.equalTo(160)
+        }
+        
+        headImgView.snp_makeConstraints { (make) in
+            make.size.equalTo(CGSize(width: 51, height: 51))
+            make.right.equalTo(contentView).offset(-10)
+            make.top.equalTo(smallIconView.snp_bottom).offset(-10)
+        }
+        
+        authView.snp_makeConstraints { (make) in
+            make.size.equalTo(CGSize(width: 14, height: 14))
+            make.bottom.right.equalTo(headImgView)
+        }
+        
+        authorLabel.snp_makeConstraints { (make) in
+            make.right.equalTo(headImgView.snp_left).offset(-10)
+            make.top.equalTo(smallIconView.snp_bottom).offset(8)
+        }
+        
+        identityLabel.snp_makeConstraints { (make) in
+            make.right.equalTo(authorLabel)
+            make.top.equalTo(authorLabel.snp_bottom).offset(4)
+        }
+        
+        categoryLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(contentView).offset(10)
+            make.top.equalTo(identityLabel.snp_bottom)
+        }
+        
+        titleLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(categoryLabel)
+            make.top.equalTo((categoryLabel.snp_bottom)).offset(10)
+            make.width.lessThanOrEqualTo(contentView).offset(-20)
+        }
+        
+        descLabel.snp_makeConstraints { (make) in
+            make.left.equalTo(titleLabel)
+            make.top.equalTo(titleLabel.snp_bottom).offset(5)
+            make.width.lessThanOrEqualTo(contentView).offset(-40)
+            make.height.equalTo(30)
+        }
+        
+        underline.snp_makeConstraints { (make) in
+            make.top.equalTo(descLabel.snp_bottom).offset(5)
+            make.left.equalTo(descLabel).offset(5)
+            make.right.equalTo(headImgView)
+        }
+        
+        bottomView.snp_makeConstraints { (make) in
+            make.top.equalTo(underline.snp_bottom).offset(5)
+            make.left.right.equalTo(contentView)
+            make.height.equalTo(30)
+        }
+
+    }
+    
+    
+    
+    
+    
+    
     
     // MARK: - 懒加载
     // 缩略图
