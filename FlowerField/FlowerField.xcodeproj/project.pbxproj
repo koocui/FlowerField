@@ -66,6 +66,7 @@
 		7B1211751EFCC811006BE81B /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1211741EFCC811006BE81B /* DetailHeaderView.swift */; };
 		7B1211771EFCC821006BE81B /* ShareBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1211761EFCC821006BE81B /* ShareBlurView.swift */; };
 		7B1211791EFD056D006BE81B /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1211781EFD056D006BE81B /* DetailTableViewController.swift */; };
+		7B4539E81F013440001F6223 /* ImageBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4539E71F013440001F6223 /* ImageBrowserViewController.swift */; };
 		7B6613911EE932EE00C83CEC /* ToolBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6613901EE932EE00C83CEC /* ToolBottomView.swift */; };
 		7B6C07A11EE6488000F2FF05 /* NavgationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C07A01EE6488000F2FF05 /* NavgationViewController.swift */; };
 		7B6C07AA1EE697AB00F2FF05 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6C07A91EE697AB00F2FF05 /* HomeTableViewController.swift */; };
@@ -198,6 +199,7 @@
 		7B1211741EFCC811006BE81B /* DetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
 		7B1211761EFCC821006BE81B /* ShareBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareBlurView.swift; sourceTree = "<group>"; };
 		7B1211781EFD056D006BE81B /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		7B4539E71F013440001F6223 /* ImageBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowserViewController.swift; sourceTree = "<group>"; };
 		7B6613901EE932EE00C83CEC /* ToolBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolBottomView.swift; sourceTree = "<group>"; };
 		7B6C07A01EE6488000F2FF05 /* NavgationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavgationViewController.swift; sourceTree = SOURCE_ROOT; };
 		7B6C07A91EE697AB00F2FF05 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -670,6 +672,21 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		7B4539E51F013416001F6223 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7B4539E61F013419001F6223 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7B4539E71F013440001F6223 /* ImageBrowserViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		7B6C07A21EE696B100F2FF05 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +719,8 @@
 		7B6C07A51EE696B900F2FF05 /* ImageBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				7B4539E61F013419001F6223 /* Controller */,
+				7B4539E51F013416001F6223 /* View */,
 			);
 			name = ImageBrowser;
 			sourceTree = "<group>";
@@ -1122,6 +1141,7 @@
 				7B048EFB1EE50229003C379E /* NSString+Extension.swift in Sources */,
 				7B048F031EE52958003C379E /* UIColor+Extension.swift in Sources */,
 				7B048EFF1EE508F0003C379E /* UIViewController+HUD.swift in Sources */,
+				7B4539E81F013440001F6223 /* ImageBrowserViewController.swift in Sources */,
 				7B048EE71EE4FBEA003C379E /* MBProgressHUD.m in Sources */,
 				7B048F141EE54307003C379E /* MainViewController.swift in Sources */,
 				7B1211711EFCC7E1006BE81B /* DetailWebViewCell.swift in Sources */,
