@@ -41,7 +41,7 @@ class HomeTableViewController: UITableViewController,BlurViewDelegate  {
         
         //设置tableviView祥光
         tableView.registerClass(HomeArticleCell.self, forCellReuseIdentifier: HomeTableViewCellID)
-        tableView.rowHeight = 330;
+        tableView.rowHeight = 350;
         tableView.separatorStyle = .None
         tableView.tableFooterView = UIView()
         
@@ -241,10 +241,10 @@ class HomeTableViewController: UITableViewController,BlurViewDelegate  {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let article = articles![indexPath.row]
-//        let detail = DetailViewController()
-//        detail.article = article
-//        self.navigationController!.pushViewController(detail, animated: true)
+        let article = articles![indexPath.row]
+        let detail = DetailTableViewController()
+        detail.article = article
+        self.navigationController!.pushViewController(detail, animated: true)
         
     }
     

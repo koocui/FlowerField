@@ -95,6 +95,27 @@ class NetworkTool: Alamofire.Manager {
             }
         }
     }
+    
+    // MARK: - 文章详情
+    func getArticleDetail(paramters:[String:AnyObject]?,finished:(article:Article?,error:NSError?)->()){
+        request(.POST, "http://m.htxq.net/servlet/SysArticleServlet?action=getArticleDetail", parameters: paramters, encoding: .URL, headers: nil).responseJSON { (response) in
+            if response.result.isSuccess{
+                XCLog(response.result.value)
+                if let dictValue = response.result.value{
+                    if let resultValue = dictValue["result"]{
+                        finished(article: Article.init(dict:resultValue as! [String:AnyObject]), error: nil)
+                    }else{
+                        finished(article: nil, error: NSError(domain: "数据异常",code: 44,userInfo: nil))
+                    }
+                }else {
+                    finished(article: nil, error: NSError(domain: "服务器异常", code: 44, userInfo: nil))
+                }
+            }else {
+                finished(article: nil, error: response.result.error)
+            }
+        }
+        
+    }
 }
 
 

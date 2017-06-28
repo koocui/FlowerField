@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 
 // 头部Cell的高度
 private let DetailHeadCellHeight   : CGFloat = 240
@@ -15,6 +15,11 @@ private let DetailHeadCellHeight   : CGFloat = 240
 private let DetailHeaderViewHeight : CGFloat = 40
 // 底部工具栏的高度
 private let DetailFooterViewHeight : CGFloat = 40
+
+// 头部的重用标识符
+private let DetailHeadCellReuseIdentifier = "DetailHeadCellReuseIdentifier"
+// webView的重用标识符
+private let DetailWebCellReuseIdentifier = "DetailWebCellReuseIdentifier"
 
 class DetailTableViewController: UITableViewController, ToolBottomViewDelegate  {
     var article : Article?
@@ -29,83 +34,145 @@ class DetailTableViewController: UITableViewController, ToolBottomViewDelegate  
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        baseSetup()
+        
+        // 获取数据
+        getDetail()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        addToolBar()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        toolBar.removeFromSuperview()
+        blur.removeFromSuperview()
+    }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    deinit{
+     NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 2
+    }
+    private func   getDetail(){
+        NetworkTool.sharedTools.getArticleDetail(["articleId":(article?.id)!]) { (article, error) in
+            self.article = article
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func   baseSetup() {
+        navigationItem.title = article?.title ?? "详情"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ad_share"), style: .Done, target: self, action: #selector(shareThread))
+        
+        tableView.registerClass(DetailHeadCell.self, forCellReuseIdentifier: DetailHeadCellReuseIdentifier)
+        tableView.registerClass(DetailWebViewCell.self, forCellReuseIdentifier: DetailWebCellReuseIdentifier)
+        tableView.separatorStyle = .None
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(DetailWebViewCellHeightChangeNoti, object: nil, queue: NSOperationQueue.mainQueue()) { [weak self](noti) in
+            if let instace = self //这里防止循环引用
+            {
+                instace.WebCellHeight = CGFloat(noti.userInfo! [DetailWebViewCellHeightKey] as! Float)
+            }
+        }
+        
     }
 
-    /*
+ 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier(DetailHeadCellReuseIdentifier) as! DetailHeadCell
+            cell.article = article
+            cell.selectionStyle = .None
+            return cell
+        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(DetailWebCellReuseIdentifier) as! DetailWebViewCell
+        cell.article = article
+        cell.selectionStyle = .None
+        cell.parentViewController = self
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return DetailHeaderViewHeight
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = DetailHeaderView(frame: CGRect(x: 0, y: 0, width: 0, height: DetailHeaderViewHeight))
+        view.article = article
+        return view
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return DetailHeadCellHeight
+        }
+        return WebCellHeight ?? (ScreenHeight - DetailHeadCellHeight - DetailHeaderViewHeight -  DetailFooterViewHeight)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    private var isShowShared = false
+    //内部控制方法
+      func shareThread(){
+            if !isShowShared {
+                isShowShared = true
+                keyWindow.addSubview(blur)
+                blur.snp_makeConstraints(closure: { (make) in
+                    make.top.equalTo(64)
+                    make.left.right.bottom.equalTo(keyWindow)
+                })
+                blur.shartAnim()
+            }else {
+                hideShareView()
+            }
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @objc private func  hideShareView(){
+        blur.endAnim()
+        isShowShared = false
     }
-    */
+    
+    //添加底部视图
+    func addToolBar(){
+        keyWindow.addSubview(toolBar)
+        toolBar.snp_makeConstraints { (make) in
+            make.left.right.bottom.equalTo(0)
+            make.height.equalTo(30)
+        }
+    }
+    
+    //懒加载
+//  底部视图
+    private lazy var toolBar:ToolBottomView = {
+        let tool = ToolBottomView()
+        tool.backgroundColor = UIColor.whiteColor()
+        tool.layer.borderWidth = 0.5
+        tool.layer.borderColor = UIColor.lightGrayColor().CGColor
+        tool.delegate = self
+        self.article!.isNotHomeList = true
+        tool.article = self.article
+        return tool
+    }()
+    //分享视图
+    private lazy var blur:ShareBlurView = {
+        let blur = ShareBlurView(effect: UIBlurEffect(style: .Dark))
+         blur.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideShareView)))
+            blur.shareBlock = {type in
+                ShareTool.shareInstance.share(type, shareText: "\(self.article!.title!): \(self.article!.desc!)", shareImage: Kingfisher.ImageCache.defaultCache.retrieveImageInDiskCacheForKey(self.article!.smallIcon!), shareURL: self.article!.sharePageUrl, handler: self, finished: {
+                    self.hideShareView()
+                })
+    
+          }
+        return blur
+    }()
+   
+
+
 
 }
