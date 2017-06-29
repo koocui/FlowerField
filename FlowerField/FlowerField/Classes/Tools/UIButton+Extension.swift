@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIButton {
-    convenience init(title:String?,imageName:String?,target:AnyObject?,selectro:Selector?,font:UIFont?,titleColor:UIColor?) {
+    convenience init(title:String = "",imageName:String?,target:AnyObject?,selectro:Selector?,font:UIFont?,titleColor:UIColor?) {
         self.init()
         if let imageN = imageName {
             setImage(UIImage(named: imageN), forState: .Normal)

@@ -122,7 +122,7 @@ class CommentViewCell: UITableViewCell {
     /// 回复按钮
     private lazy var replyBtn = UIButton(title: "回复", imageName: nil, target: g_self!, selectro: #selector(click(_:)), font: UIFont.systemFontOfSize(12), titleColor: UIColor.orangeColor())
     /// 更多操作按钮
-    private lazy var moreBtn = UIButton(title: nil, imageName: "p_more_19x15", target: g_self!, selectro: #selector(click(_:)), font: nil, titleColor: nil)
+    private lazy var moreBtn = UIButton(title: "", imageName: "p_more_19x15", target: g_self!, selectro: #selector(click(_:)), font: nil, titleColor: nil)
     
     //分隔线
     private lazy var underLine = UIImageView(image:UIImage(named:"underLine"))

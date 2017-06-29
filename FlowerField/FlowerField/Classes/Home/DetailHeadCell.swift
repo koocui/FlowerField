@@ -67,10 +67,8 @@ class DetailHeadCell: UITableViewCell {
         categoryLabel.snp_makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp_bottom).offset(10)
             make.centerX.equalTo(contentView)
-        }
-//        
-//        let shortLineWidth = ("家居庭院" as NSString).boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName : UIFont.init(name: "CODE LIGHT", size: 13)!], context: nil).size.width
-        let shortLineWidth = 100
+        }     
+        let shortLineWidth = ("家居庭院" as NSString).boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName : UIFont.init(name: "CODE LIGHT", size: 13)!], context: nil).size.width
         shortLine.snp_makeConstraints { (make) in
             make.top.equalTo(categoryLabel.snp_bottom).offset(8)
             make.centerX.equalTo(contentView)

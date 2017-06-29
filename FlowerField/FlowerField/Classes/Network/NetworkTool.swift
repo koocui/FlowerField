@@ -116,6 +116,39 @@ class NetworkTool: Alamofire.Manager {
         }
         
     }
+    /**
+     获取评论列表
+     
+     - parameter parameters: 参数
+     - parameter finished:   评论列表
+     */
+    func getCommentList(parameters:[String:AnyObject],finised:(comment:[Comment]?,error:NSError?,isNotComment:Bool)->()){
+        request(.POST, "http://m.htxq.net/servlet/UserCommentServlet", parameters: parameters, encoding: .URL, headers: nil).responseJSON(queue: dispatch_get_main_queue(), options: .MutableContainers) { (response) in
+            if response.result.isSuccess {
+                if response.result.value!["msg"] as! String == "还没有发布任何评论。"{
+                finised(comment: nil, error: nil, isNotComment: true)
+                }else {
+                    if let result = response.result.value!["result"]{
+                        var comments = [Comment]()
+                        for dict in result  as! [[String:AnyObject]]
+                        {
+                            comments.append(Comment(dict: dict))
+                        }
+                        finised(comment: comments, error: nil, isNotComment: false)
+                    }else{
+                        finised(comment: nil, error: NSError(domain: "服务器异常", code: 502, userInfo: nil), isNotComment: false)
+                    }
+
+                }
+                
+            }else {
+                finised(comment: nil, error: NSError(domain: "服务器异常",code: 502,userInfo: nil), isNotComment: false)
+            }
+        }
+    }
+    
+    
+    
 }
 
 
