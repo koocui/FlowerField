@@ -87,6 +87,10 @@
 		7BD4F8631EE8EDFB00276689 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4F8621EE8EDFB00276689 /* Category.swift */; };
 		7BDE7DE21EE6C9E400D377FB /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE7DE11EE6C9E400D377FB /* RefreshControl.swift */; };
 		7BDE7DE41EE6C9FB00D377FB /* RefreshTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE7DE31EE6C9FB00D377FB /* RefreshTipView.swift */; };
+		7BF3F7F71F061E70007714D3 /* TopAuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3F7F61F061E70007714D3 /* TopAuthorCell.swift */; };
+		7BF3F7F91F062D61007714D3 /* TopArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3F7F81F062D60007714D3 /* TopArticleCell.swift */; };
+		7BF3F7FB1F063667007714D3 /* TopArticleOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3F7FA1F063667007714D3 /* TopArticleOtherCell.swift */; };
+		7BF3F7FD1F0638B2007714D3 /* TopArticleNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3F7FC1F0638B2007714D3 /* TopArticleNormalCell.swift */; };
 		B961A300D908A1A5E7D626E7 /* Pods_FlowerField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC5490D3F0F90390F08BB6D /* Pods_FlowerField.framework */; };
 /* End PBXBuildFile section */
 
@@ -222,6 +226,10 @@
 		7BD4F8621EE8EDFB00276689 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7BDE7DE11EE6C9E400D377FB /* RefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		7BDE7DE31EE6C9FB00D377FB /* RefreshTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshTipView.swift; sourceTree = "<group>"; };
+		7BF3F7F61F061E70007714D3 /* TopAuthorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAuthorCell.swift; sourceTree = "<group>"; };
+		7BF3F7F81F062D60007714D3 /* TopArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopArticleCell.swift; sourceTree = "<group>"; };
+		7BF3F7FA1F063667007714D3 /* TopArticleOtherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopArticleOtherCell.swift; sourceTree = "<group>"; };
+		7BF3F7FC1F0638B2007714D3 /* TopArticleNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopArticleNormalCell.swift; sourceTree = "<group>"; };
 		F875150D44872778BC1D7495 /* Pods-FlowerField.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowerField.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowerField/Pods-FlowerField.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -904,6 +912,10 @@
 			isa = PBXGroup;
 			children = (
 				7B7BBFE61F04E8E2009E74E5 /* TopMenuView.swift */,
+				7BF3F7F61F061E70007714D3 /* TopAuthorCell.swift */,
+				7BF3F7F81F062D60007714D3 /* TopArticleCell.swift */,
+				7BF3F7FA1F063667007714D3 /* TopArticleOtherCell.swift */,
+				7BF3F7FC1F0638B2007714D3 /* TopArticleNormalCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1146,6 +1158,7 @@
 				7B6C07C31EE6991F00F2FF05 /* ProfileViewController.swift in Sources */,
 				7B048EFB1EE50229003C379E /* NSString+Extension.swift in Sources */,
 				7B048F031EE52958003C379E /* UIColor+Extension.swift in Sources */,
+				7BF3F7FB1F063667007714D3 /* TopArticleOtherCell.swift in Sources */,
 				7B048EFF1EE508F0003C379E /* UIViewController+HUD.swift in Sources */,
 				7B4539E81F013440001F6223 /* ImageBrowserViewController.swift in Sources */,
 				7B048EE71EE4FBEA003C379E /* MBProgressHUD.m in Sources */,
@@ -1157,6 +1170,7 @@
 				7B048F0B1EE53071003C379E /* NSObject+Extension.swift in Sources */,
 				7BCC25001F03ACE000986727 /* CommentViewController.swift in Sources */,
 				7B9FE13C1EF0113A00C93251 /* MallsCategoryHeader.swift in Sources */,
+				7BF3F7FD1F0638B2007714D3 /* TopArticleNormalCell.swift in Sources */,
 				7B048F011EE52860003C379E /* UIButton+Extension.swift in Sources */,
 				7B6C07C51EE69D1200F2FF05 /* Author.swift in Sources */,
 				7B1211731EFCC7FF006BE81B /* CommentBottomView.swift in Sources */,
@@ -1167,6 +1181,7 @@
 				7B90581C1EE7AAAC00C48A1E /* HomeArticleCell.swift in Sources */,
 				7B1211771EFCC821006BE81B /* ShareBlurView.swift in Sources */,
 				7B90581A1EE79CB800C48A1E /* TitleBtn.swift in Sources */,
+				7BF3F7F91F062D61007714D3 /* TopArticleCell.swift in Sources */,
 				7B9FE13A1EF00B9900C93251 /* BlurView.swift in Sources */,
 				7B7138D11EF906D2008EAA07 /* NetworkTool.swift in Sources */,
 				7B6C07C11EE698FA00F2FF05 /* ColumnistViewController.swift in Sources */,
@@ -1180,6 +1195,7 @@
 				7BDE7DE41EE6C9FB00D377FB /* RefreshTipView.swift in Sources */,
 				7B6613911EE932EE00C83CEC /* ToolBottomView.swift in Sources */,
 				7B048EF91EE4FDE8003C379E /* ShareTool.swift in Sources */,
+				7BF3F7F71F061E70007714D3 /* TopAuthorCell.swift in Sources */,
 				7BDE7DE21EE6C9E400D377FB /* RefreshControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -146,7 +146,36 @@ class NetworkTool: Alamofire.Manager {
             }
         }
     }
-    
+    // MARK: - 每周TOP10的获取
+    /**
+     获取每周TOP10
+     
+     - parameter action:   具体获取"专栏"还是"作者"
+     - parameter finished: 返回的block
+     */
+    func getTop10(action:TOP10Action,finished:(objs:[AnyObject]?,error:NSError?)->()){
+        request(.POST, "http://ec.htxq.net/servlet/SysArticleServlet?currentPageIndex=0&pageSize=10", parameters: ["action":action.rawValue], encoding: .URLEncodedInURL, headers: nil).responseJSON { (response) in
+            XCLog(response.result.value)
+            if let result = response.result.value{
+                //如果是作者
+                if action.rawValue == TOP10Action.TopArticleAuthor.rawValue{
+                    var authors = [Author]()
+                    for dict in result["result"] as! [[String:AnyObject]]{
+                        authors.append(Author(dict: dict))
+                    }
+                    finished(objs: authors, error: nil)
+                }else{
+                    var articles = [Article]()
+                    for dict in result["result"] as! [[String:AnyObject]]{
+                        articles.append(Article(dict: dict))
+                    }
+                    finished(objs: articles, error: nil)
+                }
+            }else {
+               finished(objs: nil, error: response.result.error)
+            }
+        }
+    }
     
     
 }
