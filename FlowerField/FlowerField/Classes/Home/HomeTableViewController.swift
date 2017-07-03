@@ -38,6 +38,7 @@ class HomeTableViewController: UITableViewController,BlurViewDelegate  {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TOP", style: .Plain, target: self, action: #selector(HomeTableViewController.toTop))
         //设置titleView
         navigationItem.titleView = titleBtn
+        titleBtn.addTarget(self, action: #selector(HomeTableViewController.selectedCategory(_:)), forControlEvents: .TouchUpInside)
         
         //设置tableviView祥光
         tableView.registerClass(HomeArticleCell.self, forCellReuseIdentifier: HomeTableViewCellID)
@@ -76,21 +77,38 @@ class HomeTableViewController: UITableViewController,BlurViewDelegate  {
             })
             blurView.transform = CGAffineTransformMakeTranslation(0, -ScreenHeight)
         }
-        UIView.animateWithDuration(0.5, animations: { 
-            if btn.selected {
-                btn.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-                self.blurView.transform = CGAffineTransformIdentity
-                self.tableView.bringSubviewToFront(self.blurView)
-                self.tableView.scrollEnabled = false
-            }else{
-                btn.transform = CGAffineTransformIdentity
-                self.blurView.transform = CGAffineTransformMakeTranslation(0, -ScreenHeight)
-                self.tableView.scrollEnabled = true
-            }
+        if btn == menubtn {
+            UIView.animateWithDuration(0.5, animations: {
+                if btn.selected {
+                    btn.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+                    self.blurView.transform = CGAffineTransformIdentity
+                    self.tableView.bringSubviewToFront(self.blurView)
+                    self.tableView.scrollEnabled = false
+                }else{
+                    btn.transform = CGAffineTransformIdentity
+                    self.blurView.transform = CGAffineTransformMakeTranslation(0, -ScreenHeight)
+                    self.tableView.scrollEnabled = true
+                }
             }) { (_) in
                 if !btn.selected{
                     self.blurView.removeFromSuperview()
                 }
+            }
+        }else {
+            UIView.animateWithDuration(0.5, animations: {
+                if btn.selected {
+                    self.blurView.transform = CGAffineTransformIdentity
+                    self.tableView.bringSubviewToFront(self.blurView)
+                    self.tableView.scrollEnabled = false
+                }else{
+                    self.blurView.transform = CGAffineTransformMakeTranslation(0, -ScreenHeight)
+                    self.tableView.scrollEnabled = true
+                }
+            }) { (_) in
+                if !btn.selected{
+                    self.blurView.removeFromSuperview()
+                }
+            }
         }
     }
     

@@ -23,6 +23,7 @@ class TitleBtn: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     override func layoutSubviews() {
+        super.layoutSubviews()
         if imageView?.frame.origin.x < titleLabel?.frame.origin.x{
             titleLabel?.frame.origin.x = imageView!.frame.origin.x
             imageView?.frame.origin.x = CGRectGetMaxX((titleLabel?.frame)!) + 10
